@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //The public folder which holds the CSS
 app.use(express.static("public"));
 //Listening on port 3000 and if it goes well then logging a message saying that the server is running
-app.listen(process.env.PORT,function () {
+app.listen(process.env.PORT || 3000,function () {
  console.log("Server is running at port 3000");
 });
 //Sending the signup.html file to the browser as soon as a request is made on localhost:3000
@@ -118,7 +118,20 @@ process.env.PORT,
 Isso basicamente é uma porta dinamica que o Heroku definirá na hora. É possível colocar um "ou", com ||. Assim, posso colocar para que app.listen também
 funcione na porta 3000 local: process.env.PORT || 3000,.
 
-Em seguida, eu preciso criar um Procfile, pois é assim que o heroku vai conseguir acessar para dar display no site com o node.
+Em seguida, eu preciso criar um Procfile, pois é assim que o heroku vai conseguir acessar para dar display no site com o node. Feito isso, preciso salvar
+no git e para fazer isso, eu preciso estar dentro do terminal na pasta do meu projeto.
+
+Para isso, eu começo com "git init", que me permite criar um novo repositório git. Git me permite salvar versões diferentes do meu código ou app. Ele con
+trola as versões do seu codigo ou app. Para adicionar o meu folder do projeto no git, basta usar "git add .".
+
+Agora, vou dar um "git commit -m "First Commit"", que significa que agora estou iniciando uma nova versão do meu projeto. O -m "First Commit", me permite 
+mandar uma mensagem.
+
+Após isso, eu crio um novo app, com "heroku create". Se tudo estiver de acordo, ele vai criar o meu link https e depois eu preciso inserir os arquivos do
+projeto, usando "git push heroku master".
+
+Caso eu queria atualizar alguma coisa no projeto, basta eu atualizar, depois ir no terminal com path no folder do projeto e digitar "git add .", depois
+"git commit -m "Second Commit"" e "git push heroku master"
 
 
 */

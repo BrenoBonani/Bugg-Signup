@@ -73,7 +73,18 @@ h1 {
     body {
     background-image: url(../images/Financial\ data-bro.svg);
     background-position: center bottom; /* Center the image */
-    background-repeat: space; /* Do not repeat the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
     background-size: 550px;
     }
   }
+
+  @media (max-width: 375px) {
+    body {
+    background-image: url(../images/Financial\ data-bro.svg);
+    background-position: center bottom; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 400px;
+    }
+  }
+  
+
