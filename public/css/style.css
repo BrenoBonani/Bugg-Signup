@@ -1,0 +1,79 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url(../images/Audit-amico.svg), url(../images/Financial\ data-bro.svg);
+  background-position: left top, right bottom; /* Center the image */
+  background-repeat: no-repeat, no-repeat; /* Do not repeat the image */
+  background-size: 500px, 500px; /* Resize the background image to cover the entire container */
+}
+
+h1 {
+    font-size: 1.5rem!important;
+  }
+  
+.mt-5 {
+    padding-top: 4rem!important;
+  }
+
+  .form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.top {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    
+  }
+  
+  .middle {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+  
+  .bottom {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .checkbox {
+    margin: 5% 0% 0%;
+  }
+  
+  .bugg-img {
+    margin-bottom: 15%;
+  }
+  
+  .btn {
+    margin: 10% 0% 30%;
+    box-shadow: 3px 4px 0px 0px #444444;
+  }
+  
+  .btn:hover {
+    background-color: #444444;
+    border: #444444;
+    box-shadow: 3px 4px 0px 0px black;
+    
+  }
+  
+  @media (max-width: 860px) {
+    body {
+    background-image: url(../images/Financial\ data-bro.svg);
+    background-position: center bottom; /* Center the image */
+    background-repeat: space; /* Do not repeat the image */
+    background-size: 550px;
+    }
+  }
