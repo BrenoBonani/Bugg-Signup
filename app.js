@@ -127,11 +127,19 @@ trola as versões do seu codigo ou app. Para adicionar o meu folder do projeto n
 Agora, vou dar um "git commit -m "First Commit"", que significa que agora estou iniciando uma nova versão do meu projeto. O -m "First Commit", me permite 
 mandar uma mensagem.
 
-Após isso, eu crio um novo app, com "heroku create". Se tudo estiver de acordo, ele vai criar o meu link https e depois eu preciso inserir os arquivos do
-projeto, usando "git push heroku master".
+Após isso, eu vou usar o comando heroku login e logar com as minhas credenciais. Depois, eu crio um novo app, com "heroku create". Se tudo estiver de acordo, 
+ele vai criar o meu link https e depois eu preciso inserir os arquivos do projeto, usando "git push heroku master".
 
 Caso eu queria atualizar alguma coisa no projeto, basta eu atualizar, depois ir no terminal com path no folder do projeto e digitar "git add .", depois
 "git commit -m "Second Commit"" e "git push heroku master"
 
+ps: se eu estiver dando deploy com database, lembrar de colocar no package.json, embaixo de "license", o seguinte código:
+
+"engines": {
+    "node": "16.15.1"
+  },
+
+  O "node:" precisa estar na versão mais recente. Para isso, basta ir no console e digitar node --version e colocar a versão que eu estiver usando. Além disso,
+  preciso criar um arquivo .gitignore para ignorar arquivos como node_modules e .DS_Store.
 
 */
