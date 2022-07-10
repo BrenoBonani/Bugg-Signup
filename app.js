@@ -1,5 +1,4 @@
-//Requiring mailchimp's module
-//For this we need to install the npm module @mailchimp/mailchimp_marketing. To do that we write:
+
 //npm install @mailchimp/mailchimp_marketing
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 //Requiring express and body parser and initializing the constant "app"
@@ -14,24 +13,25 @@ app.use(express.static("public"));
 app.listen(process.env.PORT || 3000,function () {
  console.log("Server is running at port 3000");
 });
-//Sending the signup.html file to the browser as soon as a request is made on localhost:3000
+//Sending the index.html file to the browser as soon as a request is made on localhost:3000
 app.get("/", function (req, res) {
  res.sendFile(__dirname + "/index.html");
 });
 //Setting up MailChimp
 mailchimp.setConfig({
-//*****************************ENTER YOUR API KEY HERE******************************
+//*****************************ENTER MY API KEY HERE******************************
 accessToken: "7a085026b4bac7bc1e398ce10ee1f738-us13",
-//*****************************ENTER YOUR API KEY PREFIX HERE i.e.THE SERVER******************************
+//*****************************ENTER MY API KEY PREFIX HERE i.e.THE SERVER******************************
 server: "us13"
 });
 //As soon as the sign in button is pressed execute this
-app.post("/", function (req,res) {
-//*****************************CHANGE THIS ACCORDING TO THE VALUES YOU HAVE ENTERED IN THE INPUT ATTRIBUTE IN HTML******************************
+app.post("/", function (req, res) {
+
 const firstName = req.body.fName;
 const lastName = req.body.lName;
 const email = req.body.emailName;
-//*****************************ENTER YOU LIST ID HERE******************************
+
+/* MY LIST ID */
 const listId = "ce4b0865ee";
 //Creating an object with the users data
 const subscribingUser = {
@@ -58,7 +58,7 @@ const response = await mailchimp.lists.addListMember(listId, {
 );
 }
 //Running the function and catching the errors (if any)
-// ************************THIS IS THE CODE THAT NEEDS TO BE ADDED FOR THE NEXT LECTURE*************************
+
 // So the catch statement is executed when there is an error so if anything goes wrong the code in the catch code is executed. In the catch block we're sending back the failure page. This means if anything goes wrong send the faliure page
  run().catch(e => res.sendFile(__dirname + "/failure.html"));
 });
