@@ -1,4 +1,3 @@
-
 //npm install @mailchimp/mailchimp_marketing
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 //Requiring express and body parser and initializing the constant "app"
@@ -21,7 +20,7 @@ app.get("/", function (req, res) {
 mailchimp.setConfig({
 //*****************************ENTER MY API KEY HERE******************************
 accessToken: "7a085026b4bac7bc1e398ce10ee1f738-us13",
-//*****************************ENTER MY API KEY PREFIX HERE i.e.THE SERVER******************************
+//*****************************ENTER MY API KEY SERVER******************************
 server: "us13"
 });
 //As soon as the sign in button is pressed execute this
